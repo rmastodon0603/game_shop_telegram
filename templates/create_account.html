@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление нового текстового файла
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Добавление нового текстового файла</h1>
+	<form method="post">
+		<input type="text" name="account_text" id="account_text" placeholder="Подробный текст отправляемыый клиенту" class="form-control"><br>
+		<select name="product_name" id="product_name" class="form-control">
+		 {% for el in products %}
+		 <option>{{ el.title }}</option>
+		 {% endfor %}  
+		 </select><br>
+		<input type="submit" class="btn btn-success" value="Добавить текстовый файл">
+{% endblock %}

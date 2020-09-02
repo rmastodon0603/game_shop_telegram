@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Обновления в админке
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="list-group">
+	  	{% for el in updates %}
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ el.title }}</h5>
+      <small class="text-muted">{{ el.date }}</small>
+    </div>
+    <p class="mb-1">{{ el. text }}</p>
+    <small class="text-muted">Обновление админ - панели и бота ( Версия: {{ el.title }} )</small>
+  </a>
+  	{% endfor %} 
+</div>
+{% endblock %}

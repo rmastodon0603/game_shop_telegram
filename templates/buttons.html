@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Конструктор кнопок
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1>Кнопки в боте</h1>
+  <p>Кнопка №5 - каталог товаров, Кнопка №6 - мой кабинет, Кнпопка №7 - мои покупки, Кнопка №8 - приветствие, кнопка №9 - принудительное сообщение</p>
+  <form method="post">
+  	{% for el in telegrambuttons %}
+  	<h4>Название и описание кнопки №{{ loop.index }}</h4>
+  	<textarea type="text" name="name{{ loop.index }}" id="name{{ loop.index }}"  class="form-control">{{ el.name }}</textarea><br>
+    <textarea name="text{{ loop.index }}" id="text{{ loop.index }}" placeholder="Текст для кнопки" class="form-control">{{ el.text }}</textarea><br>
+	{% endfor %} 
+    <input type="submit" class="btn btn-success" value="Обновить все кнопки">
+{% endblock %}

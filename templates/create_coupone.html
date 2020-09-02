@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление нового купона
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Добавление нового купона</h1>
+	<form method="post">
+		<input type="text" name="name_coupone" id="name_coupone" placeholder="Название купона" class="form-control"><br>
+		<textarea name="procent" id="procent" placeholder="Процент, который даёт купон ( просто число, пример: 10 )" class="form-control"></textarea><br>
+		<input type="submit" class="btn btn-success" value="Отправить">
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование купона
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Редактирование купона</h1>
+	<form method="post">
+		<textarea type="text" name="name_coupone" id="name_coupone"  class="form-control">{{ coupone.name_coupone }}</textarea><br>
+		<textarea name="procent" id="procent" class="form-control">{{ coupone.procent }}</textarea><br>
+		<input type="submit" class="btn btn-success" value="Обновить">
+		<a href="/admin/coupone/{{ coupone.id }}/del" class="btn btn-danger">Удалить</a>
+{% endblock %}

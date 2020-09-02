@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование товара
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Редактирование товара</h1>
+	<form method="post">
+		<textarea type="text" name="title" id="title"  class="form-control">{{ product.title }}</textarea><br>
+		<textarea name="price" id="price"  class="form-control">{{ product.price }}</textarea><br>
+		<select name="category" id="category" class="form-control">
+		 {% for el in podcategories %}
+		 <option>{{ el.title }}</option>
+		 {% endfor %}  
+		 </select><br>
+		<textarea name="description" id="description" class="form-control">{{ product.description }}</textarea><br>
+		<input type="submit" class="btn btn-success" value="Обновить"></a>
+		<a href="/admin/posts/{{ product.id }}/del" class="btn btn-danger">Удалить</a>
+</form>
+{% endblock %}

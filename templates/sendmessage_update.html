@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование отправленного сообщения
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Редактирование отправленного сообщения</h1>
+	<form method="post">
+		<textarea type="text" name="title" id="title"  class="form-control">{{ sendmessage.title }}</textarea><br>
+		<textarea name="text_message" id="text_message" class="form-control">{{ sendmessage.text_message }}</textarea><br>
+		<input type="submit" class="btn btn-success" value="Обновить">
+		<a href="/admin/send-message/{{ sendmessage.id }}/del" class="btn btn-danger">Удалить</a>
+{% endblock %}

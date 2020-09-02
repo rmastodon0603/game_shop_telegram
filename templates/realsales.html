@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Покупки прямо сейчас в боте
+{% endblock %}
+
+{% block body %}
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Подробная информация о покупках прямо сейчас в боте</h6>
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Количество</th>
+      <th scope="col">Название товара</th>
+      <th scope="col">User Id</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for el in realsales %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>1</td>
+      <td>{{ el.item_name }}</td>
+      <td>{{ el.user_id }}</td>
+    </tr>
+	{% endfor %} 
+  </tbody>
+</table>
+</div>
+{% endblock %}

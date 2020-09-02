@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новой рассылки
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Добавление новой рассылки</h1>
+	<form method="post">
+		<input type="text" name="title" id="title" placeholder="Название рассылки" class="form-control"><br>
+		<textarea name="text_message" id="text_message" placeholder="Текстовое сообщение всем пользователям" class="form-control"></textarea><br>
+		<input type="submit" class="btn btn-success" value="Создать рассылку">
+{% endblock %}

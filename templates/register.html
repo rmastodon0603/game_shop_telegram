@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Администраторы админ - панели
+{% endblock %}
+
+{% block body %}
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Все администраторы в админ - панели</h6>
+    {% for el in adminusers %}
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">{{ el.login }}</strong>
+          <a href="/admin/register/{{ el.id }}/del">Удалить</a>
+        </div>
+        <span class="d-block">Admin id: {{ el.id }}</span>
+      </div>
+    </div>
+        {% endfor %}  
+    </div>
+<div class="container mt-5">
+  <h1>Добавление администратора</h1>
+  <form method="post">
+    <input type="text" name="login" id="login" placeholder="Логин" class="form-control"><br>
+    <textarea name="password" id="password" placeholder="Пароль" class="form-control"></textarea><br>
+    <textarea name="password2" id="password2" placeholder="Повторите пароль" class="form-control"></textarea><br>
+    <input type="submit" class="btn btn-success" value="Создать аккаунт">
+{% endblock %}

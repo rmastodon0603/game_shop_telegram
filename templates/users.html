@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пользователи в боте
+{% endblock %}
+
+{% block body %}
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Все пользователи в боте ( Всего: {{ users_count }} )</h6>
+    {% for el in users %}
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">{{ el.user_id }}</strong>
+          <button class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#{{ el.username }}">Подробная информация</button>
+        </div>
+        <span class="d-block">@{{ el.username }}</span>
+      </div>
+    </div>
+    {% endfor %} 
+    </div>
+<!-- Modal -->
+{% for modal in modals %}
+<div class="modal fade" id="{{ modal.username }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Пользователь: @{{ modal.username }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+               <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">User id Telegram: {{ modal.user_id }}</label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Username Telegram: {{ modal.username }}</label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Количество покупок в боте: 4</label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">В магазине зарегистрирован с: {{ modal.date }}</label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Реферальная ссылка: {{ ref_link_user }}{{ modal.user_id }}</label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Баланс рефералки: 0 рублей</label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Баланс пользователя: 30 рублей</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Заблокировать</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div> 
+{% endfor %} 
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+{% endblock %}

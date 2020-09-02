@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Админ - панель
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+</div>
+<div class="row">
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Количество товаров в магазине</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ accounts }}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Общий внутренний баланс</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">215 RUB</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Количество категорий в магазине</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ categories }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+<div class="row">
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Заработано сегодня</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0 RUB</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Заработано в этом месяце</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0 RUB</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Заработано за всё время</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0 RUB</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+<div class="row">
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Продаж сегодня</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Продаж в этом месяце</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Продаж за всё время</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+<div class="row">
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Новые пользователи сегодня</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Всего пользователей</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ users }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Пользователи вышедшие</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+{% endblock %}

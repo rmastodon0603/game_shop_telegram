@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование аккаунта
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Редактирование аккаунта</h1>
+	<form method="post">
+		<select name="product_name" id="product_name" class="form-control">
+		<option> {{ account.product_name }}
+		 {% for el in products %}
+		 <option>{{ el.title }}</option>
+		 {% endfor %}  
+		 </select><br>
+		<textarea name="account_text" id="account_text" class="form-control">{{ account.account_text }}</textarea><br>
+		<input type="submit" class="btn btn-success" value="Обновить">
+		<a href="/admin/accounts/{{ account.id }}/del" class="btn btn-danger">Удалить</a>
+{% endblock %}

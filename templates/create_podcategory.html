@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новой подкатегории
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Добавление новой подкатегории</h1>
+	<form method="post" enctype="multipart/form-data">
+		<input type="text" name="title" id="title" placeholder="Название подкатегории" class="form-control"><br>
+		<label for='inputFile'>Картинка категории</label>
+		<input type='file' name='inputFile'>
+		<select name="mainCategory" id="mainCategory" class="form-control">
+		 {% for el in categories %}
+		 <option>{{ el.title }}</option>
+		 {% endfor %}  
+		 </select><br>
+		<input type="submit" class="btn btn-success" value="Создать подкатегорию">
+{% endblock %}

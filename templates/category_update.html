@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование категории
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+	<h1>Редактирование товара</h1>
+	<form method="post" enctype="multipart/form-data">
+		<textarea type="text" name="title" id="title"  class="form-control">{{ category.title }}</textarea><br>
+		<label for='inputFile'>Картинка категории: {{ category.image }}</label>
+		<input type='file' name='inputFile'>
+		<textarea name="link" id="link"  class="form-control">{{ category.link }}</textarea><br>
+		<input type="submit" class="btn btn-success" value="Обновить"></a>
+		<a href="/admin/categories/{{ category.id }}/del" class="btn btn-danger">Удалить</a>
+</form>
+{% endblock %}

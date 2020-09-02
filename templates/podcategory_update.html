@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новой подкатегории
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1>Добавление новой подкатегории</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="text" name="title" id="title" value="{{ podcategory.title }}" class="form-control"><br>
+    <label for='inputFile'>Картинка категории: {{ podcategory.image }}</label>
+    <input type='file' name='inputFile'>
+    <select name="main_category" id="main_category" class="form-control">
+     <b> <option>{{ podcategory.main_category }}</option></b>
+     {% for el in categories %}
+     <option>{{ el.title }}</option>
+     {% endfor %}  
+     </select><br>
+    <input type="submit" class="btn btn-success" value="Обновить"></a>
+    <a href="/admin/podacategories/{{ podcategory.id }}/del" class="btn btn-danger">Удалить</a>
+</form>
+{% endblock %}

@@ -742,7 +742,11 @@ def index():
 
 	# Выводим общее количество категорий в боте
 	categories = Category.query.count()
-	return render_template ("admin.html", accounts=accounts, users=users, categories=categories)
+
+	# Выводим общее количество покупок в боте за всё время
+	sales = Sales.query.count()
+
+	return render_template ("admin.html", accounts=accounts, users=users, categories=categories, sales=sales)
 
 # Обработка логаута 
 @app.route('/logout', methods=['GET', 'POST'])

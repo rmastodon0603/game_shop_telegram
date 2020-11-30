@@ -144,7 +144,7 @@ class Product(db.Model):
     kolvo = db.Column(db.Integer, nullable=False, default=0)
     category = db.Column(db.String(50), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    limit_on_time_purchase = db.Column(db.Integer, nullable=False)
+    limit_on_time_purchase = db.Column(db.Integer, nullable=False) #
 
     def __repr__(self):
         return '<Product %r>' % self.id
@@ -336,10 +336,10 @@ def createArticle():
         price = request.form['price']
         category = request.form['category']
         description = request.form['description']
-        limit_on_time_purchase = request.form['limit_on_time_purchase']
+        limit_on_time_purchase = request.form['limit_on_time_purchase'] #
 
         product = Product(title=title, price=price, kolvo=0, category=category, description=description,
-                          limit_on_time_purchase=limit_on_time_purchase)
+                          limit_on_time_purchase=limit_on_time_purchase) #
 
         try:
             db.session.add(product)
@@ -436,7 +436,7 @@ def post_update(id):
         product.price = request.form['price']
         product.category = request.form['category']
         product.description = request.form['description']
-        product.limit_on_time_purchase = request.form['limit_on_time_purchase']
+        product.limit_on_time_purchase = request.form['limit_on_time_purchase'] #
 
         try:
             db.session.commit()

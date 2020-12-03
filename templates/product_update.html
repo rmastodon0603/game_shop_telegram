@@ -16,7 +16,9 @@
 		 {% endfor %}  
 		 </select><br>
 		<textarea name="description" id="description" class="form-control">{{ product.description }}</textarea><br>
+        <input name="limit_on_time_purchase" id="limit_on_time_purchase" placeholder="Ограничение на единоразовую покупку" class="form-control"><br>
 		<input type="submit" class="btn btn-success" value="Обновить"></a>
 		<a href="/admin/posts/{{ product.id }}/del" class="btn btn-danger">Удалить</a>
 </form>
+</div>
 {% endblock %}

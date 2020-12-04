@@ -730,6 +730,12 @@ def adminUpdates():
     updates.reverse()
     return render_template("updates.html", updates=updates)
 
+# Тестовая страница
+@app.route("/admin/test-page")
+@login_required
+def testPage():
+    return render_template("test-new-design.html")
+
 
 @app.route('/')
 @login_required

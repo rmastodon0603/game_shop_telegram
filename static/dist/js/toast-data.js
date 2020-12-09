@@ -5,8 +5,8 @@ $(document).ready(function() {
 	"use strict";
 	
 	$.toast({
-		heading: 'Welcome to Philbert',
-		text: 'Use the predefined ones, or specify a custom position object.',
+		heading: 'Добро пожаловать в Product Name',
+		text: 'Вам осталось совсем немного, чтобы достичь вашей мечты!',
 		position: 'top-right',
 		loaderBg:'#fec107',
 		icon: 'success',
@@ -48,7 +48,7 @@ $(document).ready(function() {
         $.toast().reset('all');
 		$("body").removeAttr('class');
 		$.toast({
-            heading: 'Welcome to Philbert',
+            heading: 'Добро пожаловать в Product Name',
             text: 'Use the predefined ones, or specify a custom position object.',
             position: 'top-right',
             loaderBg:'#fec107',

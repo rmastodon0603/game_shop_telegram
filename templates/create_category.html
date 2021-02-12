@@ -1,10 +1,8 @@
-{% extends 'base.html' %}
+<!-- Last Template Code
 
-{% block title %}
-Добавление новой категории
-{% endblock %}
 
-{% block body %}
+
+
 <div class="container mt-5">
 	<h1>Добавление новой категории</h1>
 	<form method="post" enctype="multipart/form-data">
@@ -13,4 +11,120 @@
 		<input type='file' name='inputFile'>
 		<textarea name="link" id="link" placeholder="Линк ( англ )" class="form-control"></textarea><br>
 		<input type="submit" class="btn btn-success" value="Создать категорию">
+
+ -->
+
+{% extends 'base-ver-1.html' %}
+
+{% block title %}
+Создание категории в боте
 {% endblock %}
+
+{% block head %}
+
+<!-- Custom CSS -->
+<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+			<!-- Main Content -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
+					<!-- Title -->
+					<div class="row heading-bg">
+						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						  <h5 class="txt-dark">Добавить категорию</h5>
+						</div>
+						<!-- Breadcrumb -->
+						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						  <ol class="breadcrumb">
+							<li><a href="index.html">Дешбоард</a></li>
+							<li><a href="#"><span>e-commerce</span></a></li>
+							<li class="active"><span>Добавить категорию</span></li>
+						  </ol>
+						</div>
+						<!-- /Breadcrumb -->
+					</div>
+					<!-- /Title -->
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="form-wrap">
+											<form method="post" enctype="multipart/form-data">
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>О категории</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Название категории</label>
+															<input type="text" name="title" id="title" class="form-control" placeholder="Rounded Chair">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Линк категории ( англ )</label>
+															<input type="text" name="link" id="link" class="form-control" placeholder="globe type chair for rest">
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-collection-image mr-10"></i>upload image</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="img-upload-wrap">
+															<img class="img-responsive" src="dist/img/chair.jpg" alt="upload_img"> 
+														</div>
+														<div class="fileupload btn btn-info btn-anim"><i class="fa fa-upload"></i><span class="btn-text">Upload new image</span>
+															<input type='file' name='inputFile' class="upload">
+														</div>
+													</div>
+												</div>
+												<hr class="light-grey-hr"/>
+												<div class="form-actions">
+													<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Сохранить</span></button>
+													<button type="button" class="btn btn-warning pull-left">Cancel</button>
+													<div class="clearfix"></div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row -->
+
+				</div>
+
+		<!-- /#wrapper -->
+		{% block scripts %}
+		<!-- JavaScript -->
+		
+		<!-- jQuery -->
+		<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JavaScript -->
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JavaScript -->
+		<script src="dist/js/jquery.slimscroll.js"></script>
+	
+		<!-- Fancy Dropdown JS -->
+		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		
+		<!-- Owl JavaScript -->
+		<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+		<!-- Switchery JavaScript -->
+		<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	
+		<!-- Init JavaScript -->
+		<script src="dist/js/init.js"></script>
+		{% endblock %}	
+		{% endblock %}

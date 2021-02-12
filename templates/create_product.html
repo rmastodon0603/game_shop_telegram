@@ -1,10 +1,7 @@
-{% extends 'base.html' %}
+<!--
 
-{% block title %}
 Добавление нового товара
-{% endblock %}
 
-{% block body %}
 <div class="container mt-5">
 	<h1>Добавление записи</h1>
 	<form method="post">
@@ -20,4 +17,135 @@
 		<input type="submit" class="btn btn-success" value="Отправить">
     </form>
 </div>
+-->
+
+{% extends 'base-ver-1.html' %}
+
+{% block title %}
+Создание продукта в боте
 {% endblock %}
+
+{% block head %}
+
+<!-- Custom CSS -->
+<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+			<!-- Main Content -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
+					<!-- Title -->
+					<div class="row heading-bg">
+						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						  <h5 class="txt-dark">Добавить продукт</h5>
+						</div>
+						<!-- Breadcrumb -->
+						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						  <ol class="breadcrumb">
+							<li><a href="index.html">Дешбоард</a></li>
+							<li><a href="#"><span>e-commerce</span></a></li>
+							<li class="active"><span>Добавить продукт</span></li>
+						  </ol>
+						</div>
+						<!-- /Breadcrumb -->
+					</div>
+					<!-- /Title -->
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="form-wrap">
+											<form method="post">
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>О продукте</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Название продукта</label>
+															<input type="text" type="text" name="title" id="title" class="form-control" placeholder="Rounded Chair">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Цена</label>
+															<input type="text" name="price" id="price" class="form-control" placeholder="globe type chair for rest">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Ограничение на количество покупок</label>
+															<input type="text" name="limit_on_time_purchase" id="limit_on_time_purchase" class="form-control" placeholder="globe type chair for rest">
+														</div>
+													</div>
+
+												</div>
+												<hr class="light-grey-hr"/>
+													<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-comment-text mr-10"></i>Полное описание товара</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<textarea name="description" id="description" class="form-control" rows="4">Полное описание товара</textarea>
+														</div>
+													</div>
+												</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Подкатегория</label>
+															<select class="form-control" name="category" id="category" data-placeholder="Choose a Category" tabindex="1">
+																{% for el in podcategories %}
+		 <option>{{ el.title }}</option>
+		 {% endfor %}  
+															</select>
+														</div>
+													</div>
+												<hr class="light-grey-hr"/>
+												<div class="form-actions">
+													<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Сохранить</span></button>
+													<button type="button" class="btn btn-warning pull-left">Закрыть</button>
+													<div class="clearfix"></div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row -->
+
+				</div>
+
+		<!-- /#wrapper -->
+		{% block scripts %}
+		<!-- JavaScript -->
+		
+		<!-- jQuery -->
+		<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JavaScript -->
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JavaScript -->
+		<script src="dist/js/jquery.slimscroll.js"></script>
+	
+		<!-- Fancy Dropdown JS -->
+		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		
+		<!-- Owl JavaScript -->
+		<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+		<!-- Switchery JavaScript -->
+		<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	
+		<!-- Init JavaScript -->
+		<script src="dist/js/init.js"></script>
+		{% endblock %}	
+		{% endblock %}

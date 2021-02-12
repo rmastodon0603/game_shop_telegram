@@ -19,7 +19,7 @@ now = datetime.datetime.now()
 
 storage = MemoryStorage()
 
-bot = Bot(token="1274207995:AAHs4eTSkDPh-R75stZsZ25ToQfMt_veDdU")
+bot = Bot(token="967548998:AAG_L68xhcsQtWbXRroeKpcKUHJQA__1_IE")
 dp = Dispatcher(bot, storage=storage)
 
 

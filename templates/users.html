@@ -1,10 +1,11 @@
-{% extends 'base.html' %}
+<!--
 
-{% block title %}
+
+
 Пользователи в боте
-{% endblock %}
 
-{% block body %}
+
+
 <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h6 class="border-bottom border-gray pb-2 mb-0">Все пользователи в боте ( Всего: {{ users_count }} )</h6>
     {% for el in users %}
@@ -20,7 +21,7 @@
     </div>
     {% endfor %} 
     </div>
-<!-- Modal -->
+
 {% for modal in modals %}
 <div class="modal fade" id="{{ modal.username }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -68,4 +69,111 @@
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+-->
+
+{% extends 'base-ver-1.html' %}
+
+{% block title %}
+Пользователи в боте
+{% endblock %}
+
+{% block head %}
+<link href="{{ url_for('static', filename='vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ url_for('static', filename='vendors/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+<div class="page-wrapper">
+      <div class="container-fluid">
+        
+        <!-- Title -->
+        <div class="row heading-bg">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-dark">Пользователи</h5>
+          </div>
+          <!-- Breadcrumb -->
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="#"><span>Пользователи</span></a></li>
+            </ol>
+          </div>
+          <!-- /Breadcrumb -->
+        </div>
+        <!-- /Title -->
+      <div class="row">
+          
+          <!-- Bordered Table -->
+          <div class="col-sm-12">
+            <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Список пользователей</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <div class="table-wrap mt-40">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered mb-0">
+                      <thead>
+                        <tr>
+                        <th>Дата регистрации </th>
+                        <th>Username</th>
+                        <th>User ID</th>
+                        <th class="text-nowrap">Действие</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for modal in modals %}
+                        <tr>
+                        <td>{{ modal.date }}</td>
+                        <td>{{ modal.username }}</td>
+<td>{{ modal.user_id }}</td>
+<td class="text-nowrap"><a href="#" class="mr-25" data-toggle="tooltip" data-original-title="Подробная информация"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>  </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Bordered Table -->
+          
+        </div>
+        
+
+{% block scripts %}
+  <!-- JavaScript -->
+  
+    <!-- jQuery -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Piety JavaScript -->
+  <script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+  <script src="dist/js/peity-data.js"></script>
+  
+  <!-- Slimscroll JavaScript -->
+  <script src="dist/js/jquery.slimscroll.js"></script>
+  
+  <!-- Owl JavaScript -->
+  <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  
+  <!-- Switchery JavaScript -->
+  <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+  
+  <!-- Fancy Dropdown JS -->
+  <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+  
+  <!-- Init JavaScript -->
+  <script src="dist/js/init.js"></script>
+{% endblock %}
 {% endblock %}

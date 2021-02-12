@@ -1,10 +1,7 @@
-{% extends 'base.html' %}
+<!--
 
-{% block title %}
 Добавление нового товара
-{% endblock %}
 
-{% block body %}
 <div class="my-3 p-3 bg-white rounded shadow-sm">
     <h6 class="border-bottom border-gray pb-2 mb-0">Все добавленные товары в магазин</h6>
     <br>
@@ -23,4 +20,113 @@
     </div>
         {% endfor %}
     </div>
+-->
+
+{% extends 'base-ver-1.html' %}
+
+{% block title %}
+Товары в боте
+{% endblock %}
+
+{% block head %}
+<link href="{{ url_for('static', filename='vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ url_for('static', filename='vendors/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+<div class="page-wrapper">
+      <div class="container-fluid">
+        
+        <!-- Title -->
+        <div class="row heading-bg">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-dark">Товары</h5>
+          </div>
+          <!-- Breadcrumb -->
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="#"><span>Товары</span></a></li>
+            </ol>
+          </div>
+          <!-- /Breadcrumb -->
+        </div>
+        <!-- /Title -->
+      <div class="row">
+          
+          <!-- Bordered Table -->
+          <div class="col-sm-12">
+            <div class="panel panel-default card-view">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h6 class="panel-title txt-dark">Список товаров</h6>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <button class="btn  btn-success btn-rounded"><a href='/admin/create-product'>Добавить товар</a></button>
+              <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                  <div class="table-wrap mt-40">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered mb-0">
+                      <thead>
+                        <tr>
+                        <th>Название товара</th>
+                        <th>Категория</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                        <th class="text-nowrap">Действие</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for el in products %}
+                        <tr>
+                        <td>{{ el.title }}</td>
+                        <td>{{ el.category }}</td>
+                        <td>{{ el.price }}</td>
+                        <td>{{ el.kolvo }}</td>
+                        <td class="text-nowrap"><a href="#" class="mr-25" data-toggle="tooltip" data-original-title="Редактировать"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="#" data-toggle="tooltip" data-original-title="Закрыть"> <i class="fa fa-close text-danger"></i> </a> </td>
+                        </tr>
+                       {% endfor %}
+                      </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /Bordered Table -->
+          
+        </div>
+        
+
+{% block scripts %}
+  <!-- JavaScript -->
+  
+    <!-- jQuery -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Piety JavaScript -->
+  <script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+  <script src="dist/js/peity-data.js"></script>
+  
+  <!-- Slimscroll JavaScript -->
+  <script src="dist/js/jquery.slimscroll.js"></script>
+  
+  <!-- Owl JavaScript -->
+  <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  
+  <!-- Switchery JavaScript -->
+  <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+  
+  <!-- Fancy Dropdown JS -->
+  <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+  
+  <!-- Init JavaScript -->
+  <script src="dist/js/init.js"></script>
+{% endblock %}
 {% endblock %}
